@@ -1,5 +1,30 @@
-import { Box, Button, HStack, Select, Text } from "@chakra-ui/react";
+import { ArrowLeftIcon, ArrowRightIcon } from "@chakra-ui/icons";
+import {
+	Box,
+	Button,
+	HStack,
+	IconButton,
+	Select,
+	Text,
+} from "@chakra-ui/react";
 import React from "react";
+
+const ButtonPagination = (props) => {
+	const { children, index, setPageIndex, pageIndex } = props;
+
+	return (
+		<Button
+			size='sm'
+			onClick={() => {
+				setPageIndex(index);
+			}}
+			colorScheme='teal'
+			variant={pageIndex === index ? "solid" : "link"}
+		>
+			{children}
+		</Button>
+	);
+};
 
 /**
  *
@@ -27,19 +52,101 @@ const PaginationTable = (props) => {
 
 	const showButtons = () => {
 		let buttons = [];
-		for (let index = 0; index < totalItemsCount / pageSize; index++) {
-			buttons.push(
-				<Button
-					size='sm'
-					onClick={() => {
-						setPageIndex(index);
-					}}
-					colorScheme={pageIndex === index ? "teal" : "gray"}
-				>
-					{index + 1}
-				</Button>
-			);
+
+		const totalIndex = parseInt(totalItemsCount / pageSize);
+
+		if (totalIndex < 5) {
+			for (
+				let index = 0;
+				index < parseInt(totalItemsCount / pageSize);
+				index++
+			) {
+				buttons.push(
+					<ButtonPagination
+						setPageIndex={setPageIndex}
+						index={index}
+						pageIndex={pageIndex}
+					>
+						{index + 1}
+					</ButtonPagination>
+				);
+			}
 		}
+
+		if (totalIndex > 5) {
+			if (pageIndex < 3) {
+				for (let index = 0; index < 5; index++) {
+					buttons.push(
+						<ButtonPagination
+							setPageIndex={setPageIndex}
+							index={index}
+							pageIndex={pageIndex}
+						>
+							{index + 1}
+						</ButtonPagination>
+					);
+				}
+			} else if (pageIndex >= totalIndex - 2) {
+				for (
+					let index = totalIndex - 5;
+					index < parseInt(totalItemsCount / pageSize);
+					index++
+				) {
+					buttons.push(
+						<ButtonPagination
+							setPageIndex={setPageIndex}
+							index={index}
+							pageIndex={pageIndex}
+						>
+							{index + 1}
+						</ButtonPagination>
+					);
+				}
+			} else {
+				for (let index = pageIndex - 2; index < pageIndex + 3; index++) {
+					buttons.push(
+						<ButtonPagination
+							setPageIndex={setPageIndex}
+							index={index}
+							pageIndex={pageIndex}
+						>
+							{index + 1}
+						</ButtonPagination>
+					);
+				}
+			}
+		}
+
+		// Si en el indice que está es mayor a cero muestra el boton para volver atrás
+		buttons.unshift(
+			<IconButton
+				icon={<ArrowLeftIcon />}
+				size='sm'
+				onClick={() => {
+					setPageIndex(pageIndex - 1);
+				}}
+				isDisabled={!(pageIndex > 0)}
+				colorScheme='teal'
+				variant='link'
+			>
+				Atras
+			</IconButton>
+		);
+
+		buttons.push(
+			<IconButton
+				icon={<ArrowRightIcon />}
+				size='sm'
+				onClick={() => {
+					setPageIndex(pageIndex + 1);
+				}}
+				isDisabled={!(pageIndex + 1 < parseInt(totalItemsCount / pageSize))}
+				colorScheme='teal'
+				variant='link'
+			>
+				Atras
+			</IconButton>
+		);
 
 		return buttons;
 	};

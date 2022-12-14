@@ -45,7 +45,7 @@ const TablePaginacion = () => {
 	const createData = () => {
 		let datos = [];
 
-		for (let index = 0; index < 151; index++) {
+		for (let index = 0; index < 251; index++) {
 			datos.push(createFakeDataToTable());
 		}
 
@@ -160,7 +160,6 @@ const TablePaginacion = () => {
 						</Th>
 						<Th>Suscription</Th>
 						<Th>Email</Th>
-						<Th>Acciones</Th>
 					</Tr>
 				</Thead>
 				<Tbody>
@@ -186,7 +185,6 @@ const TablePaginacion = () => {
 										<Td>{item.sex}</Td>
 										<Td>{item.subscriptionTier}</Td>
 										<Td>{item.email}</Td>
-										<Td></Td>
 									</Tr>
 								);
 							})
