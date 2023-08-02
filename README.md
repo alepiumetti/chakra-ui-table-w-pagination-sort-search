@@ -13,4 +13,5 @@ Pagination tables component for Chakra-UI
 ### URLs
 
 - [npm module](https://www.npmjs.com/package/table-pagination-chakra-ui)
+- [Demo](https://alepiumetti.github.io/chakra-ui-table-w-pagination-sort-search/)
   
