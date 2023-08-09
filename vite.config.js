@@ -4,11 +4,11 @@ import react from "@vitejs/plugin-react";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "/chakra-ui-table-w-pagination-sort-search/",
+  // base: "/chakra-ui-table-w-pagination-sort-search/",
   build: {
     lib: {
       entry: path.resolve("src", "components/PaginationTable.jsx"),
-      name: "table-pagination-chakra-ui",
+      name: "PaginationTable",
       fileName: (format) => `table-pagination-chakra-ui.${format}.js`,
     },
 
