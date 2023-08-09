@@ -9,7 +9,7 @@
     "name": "Alejandro Piumetti",
     "email": "alejandro@piumetti.com.ar"
   },
-  "version": "0.0.16",
+  "version": "1.0.0",
   "type": "module",
   "main": "/dist/index.umd.js",
   "module": "dist/index.es.js",
@@ -22,7 +22,15 @@
   "files": [
     "/dist"
   ],
-  "keywords": ["chakra-ui","react component","reactjs","component chakra-ui", "chakraui" ,"pagination","pagination table"],
+  "keywords": [
+    "chakra-ui",
+    "react component",
+    "reactjs",
+    "component chakra-ui",
+    "chakraui",
+    "pagination",
+    "pagination table"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build",
