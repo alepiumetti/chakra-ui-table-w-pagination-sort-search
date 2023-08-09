@@ -11,14 +11,17 @@
   },
   "version": "0.0.12",
   "type": "module",
-  "main": "./dist/PaginationTable.umd.js",
-  "module": "./dist/PaginationTable.es.js",
+  "main": "/dist/index.umd.js",
+  "module": "dist/index.es.js",
   "exports": {
     ".": {
-      "import": "./dist/PaginationTable.es.js",
-      "require": "./dist/PaginationTable.umd.js"
+      "import": "/dist/index.es.js",
+      "require": "/dist/index.umd.js"
     }
   },
+  "files": [
+    "/dist"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build",

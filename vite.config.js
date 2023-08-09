@@ -7,9 +7,9 @@ export default defineConfig({
   // base: "/chakra-ui-table-w-pagination-sort-search/",
   build: {
     lib: {
-      entry: path.resolve("src", "/src/components/PaginationTable.jsx"),
-      name: "PaginationTable",
-      fileName: (format) => `PaginationTable.${format}.js`,
+      entry: path.resolve("src", "/src/components/index.jsx"),
+      name: "table-pagination-chakra-ui",
+      fileName: (format) => `index.${format}.js`,
     },
 
     rollupOptions: {
@@ -17,9 +17,12 @@ export default defineConfig({
       output: {
         globals: {
           react: "React",
+          "react-dom": "ReactDOM",
         },
       },
     },
+    sourcemap: true,
+    emptyOutDir: true,
   },
   plugins: [react()],
 });
