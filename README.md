@@ -8,8 +8,9 @@ Pagination tables component for Chakra-UI
 - [Getting started](#getting-started)
   - [Install](#install)
     - [Props](#props)
+    - [Import and use](#import-and-use)
   - [Example](#example)
-    - [URLs](#urls)
+  - [Demo](#demo)
 
 
 # Getting started
@@ -32,7 +33,7 @@ Pagination tables component for Chakra-UI
 
 `pageSizeOptions`: {Array.Number} - Son las opciones de cantidades de items que se pueden mostrar por página.
 
-### Import and use
+### Import and use
 
 
 ```javascript
@@ -122,10 +123,8 @@ const Table = () => {
 }
 ```
 
+## Demo
 
+https://alepiumetti.github.io/chakra-ui-table-w-pagination-sort-search/
 
-### URLs
-
-- [npm module](https://www.npmjs.com/package/table-pagination-chakra-ui)
-- [Demo](https://alepiumetti.github.io/chakra-ui-table-w-pagination-sort-search/)
   
