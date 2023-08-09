@@ -7,7 +7,7 @@
   "private": false,
   "version": "0.0.5",
   "type": "module",
-  "main": "dist/assets/index-51c797c7.js",
+  "main": "src/TablePaginationSort/index.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
