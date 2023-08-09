@@ -9,7 +9,7 @@ export default defineConfig({
     lib: {
       entry: path.resolve("src", "components/PaginationTable.jsx"),
       name: "PaginationTable",
-      fileName: (format) => `table-pagination-chakra-ui.${format}.js`,
+      fileName: (format) => `PaginationTable.${format}.js`,
     },
 
     rollupOptions: {
