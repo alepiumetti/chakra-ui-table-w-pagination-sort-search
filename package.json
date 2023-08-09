@@ -11,12 +11,12 @@
   },
   "version": "0.0.11",
   "type": "module",
-  "main": "./dist/table-pagination-chakra-ui.umd.js",
-  "module": "./dist/table-pagination-chakra-ui.es.js",
+  "main": "./dist/PaginationTable.umd.js",
+  "module": "./dist/PaginationTable.es.js",
   "exports": {
     ".": {
-      "import": "./dist/table-pagination-chakra-ui.es.js",
-      "require": "./dist/table-pagination-chakra-ui.umd.js"
+      "import": "./dist/PaginationTable.es.js",
+      "require": "./dist/PaginationTable.umd.js"
     }
   },
   "scripts": {
