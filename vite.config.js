@@ -7,7 +7,7 @@ export default defineConfig({
   // base: "/chakra-ui-table-w-pagination-sort-search/",
   build: {
     lib: {
-      entry: path.resolve("src", "components/PaginationTable.jsx"),
+      entry: path.resolve("src", "/src/components/PaginationTable.jsx"),
       name: "PaginationTable",
       fileName: (format) => `PaginationTable.${format}.js`,
     },
