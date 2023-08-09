@@ -1,4 +1,4 @@
 import PaginationTable from "./PaginationTable";
 import { sortData } from "./SortData";
 
-export { PaginationTable, sortData };
+export default { PaginationTable, sortData };

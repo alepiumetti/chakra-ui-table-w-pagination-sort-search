@@ -5,9 +5,20 @@
     "url": "https://github.com/alepiumetti/chakra-ui-table-w-pagination-sort-search.git"
   },
   "private": false,
+  "author": {
+    "name": "Alejandro Piumetti",
+    "email": "alejandro@piumetti.com.ar"
+  },
   "version": "0.0.6",
   "type": "module",
-  "main": "src/TablePaginationSort/index.js",
+  "main": "./dist/chakra-ui-table-w-pagination.umd.js",
+  "module": "./dist/chakra-ui-table-w-pagination.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/chakra-ui-table-w-pagination.es.js",
+      "require": "./dist/chakra-ui-table-w-pagination.umd.js"
+    }
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
