@@ -9,7 +9,7 @@
     "name": "Alejandro Piumetti",
     "email": "alejandro@piumetti.com.ar"
   },
-  "version": "0.0.9",
+  "version": "0.0.10",
   "type": "module",
   "main": "./dist/table-pagination-chakra-ui.umd.js",
   "module": "./dist/table-pagination-chakra-ui.es.js",
