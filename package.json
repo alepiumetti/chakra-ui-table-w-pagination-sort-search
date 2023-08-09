@@ -7,6 +7,7 @@
   "private": false,
   "version": "0.0.4",
   "type": "module",
+  "main": "dist/assets/index-51c797c7.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
