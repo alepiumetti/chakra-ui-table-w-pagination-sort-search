@@ -11,12 +11,12 @@
   },
   "version": "0.0.7",
   "type": "module",
-  "main": "./dist/chakra-ui-table-w-pagination.umd.js",
-  "module": "./dist/chakra-ui-table-w-pagination.es.js",
+  "main": "./dist/table-pagination-chakra-ui.umd.js",
+  "module": "./dist/table-pagination-chakra-ui.es.js",
   "exports": {
     ".": {
-      "import": "./dist/chakra-ui-table-w-pagination.es.js",
-      "require": "./dist/chakra-ui-table-w-pagination.umd.js"
+      "import": "./dist/table-pagination-chakra-ui.es.js",
+      "require": "./dist/table-pagination-chakra-ui.umd.js"
     }
   },
   "scripts": {
