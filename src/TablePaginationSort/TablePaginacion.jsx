@@ -35,7 +35,7 @@ const createFakeDataToTable = () => {
 
 const TablePaginacion = () => {
   const [pageIndex, setPageIndex] = useState(0);
-  const [pageSize, setPageSize] = useState(25);
+  const [pageSize, setPageSize] = useState(5);
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -198,7 +198,7 @@ const TablePaginacion = () => {
         pageIndex={pageIndex}
         setPageIndex={setPageIndex}
         totalItemsCount={data.length}
-        pageSizeOptions={[10, 25, 50]}
+        pageSizeOptions={[5, 25, 50]}
       />
     </TableContainer>
   );

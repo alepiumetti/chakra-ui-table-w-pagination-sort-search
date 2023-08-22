@@ -31,7 +31,13 @@ Pagination tables component for Chakra-UI
 
 `totalItemsCount`: {Number} - Es el largo del array de datos que se va a mostrar en la tabla
 
-`pageSizeOptions`: {Array.Number} - Son las opciones de cantidades de items que se pueden mostrar por página.
+`pageSizeOptions`: {Array.Number} - Son las opciones de cantidades de items que se pueden mostrar por página. - `Default = [10,25,50]`
+
+`colorScheme`: Color de la paginación - `Default = "teal"`
+
+`showOptions`: {Boolean} - Muestra las opciones - `Default = true`
+
+`labelOptions`: {String} - Etiqueta de opciones - `Default = "Items mostrados"`
 
 ### Import and use
 

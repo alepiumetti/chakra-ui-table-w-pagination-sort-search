@@ -11,7 +11,13 @@ import {
 import React from "react";
 
 const ButtonPagination = (props) => {
-  const { children, index, setPageIndex, pageIndex } = props;
+  const {
+    children,
+    index,
+    setPageIndex,
+    pageIndex,
+    colorScheme = "teal",
+  } = props;
 
   return (
     <Button
@@ -19,7 +25,7 @@ const ButtonPagination = (props) => {
       onClick={() => {
         setPageIndex(index);
       }}
-      colorScheme="teal"
+      colorScheme={colorScheme}
       variant={pageIndex === index ? "solid" : "link"}
     >
       {children}
@@ -37,7 +43,10 @@ const ButtonPagination = (props) => {
  * @param {Number} pageIndex Es la indice en el cual nos encontramos dentro de la paginación de la tabla
  * @param {Function} setPageIndex Setter de pageIndex
  * @param {Number} totalItemCount Es el largo del array de datos que se va a mostrar en la tabla
- * @param {Array.Number} pageSizeOptions Son las opciones de cantidades de items que se pueden mostrar por página.
+ * @param {Array.Number} pageSizeOptions Son las opciones de cantidades de items que se pueden mostrar por página. - Default = [10,25,50]
+ * @param {String} colorScheme - Color de estilo de la paginación - Default = "teal"
+ * @param {Boolean} showOptions - Muestra las opciones - Default = true
+ * @param {String} labelOptions - Etiqueta de opciones - Default = "Items mostrados"
  * @return {Component} Componente de paginación de tablas.
  */
 
@@ -48,7 +57,10 @@ const PaginationTable = (props) => {
     pageIndex,
     setPageIndex,
     totalItemsCount,
-    pageSizeOptions,
+    pageSizeOptions = [10, 25, 50],
+    showOptions = true,
+    labelOptions = "Items mostrados",
+    colorScheme = "teal",
   } = props;
 
   const showButtons = () => {
@@ -64,6 +76,7 @@ const PaginationTable = (props) => {
       ) {
         buttons.push(
           <ButtonPagination
+            colorScheme={colorScheme}
             setPageIndex={setPageIndex}
             index={index}
             pageIndex={pageIndex}
@@ -79,6 +92,7 @@ const PaginationTable = (props) => {
         for (let index = 0; index < 5; index++) {
           buttons.push(
             <ButtonPagination
+              colorScheme={colorScheme}
               setPageIndex={setPageIndex}
               index={index}
               pageIndex={pageIndex}
@@ -95,6 +109,7 @@ const PaginationTable = (props) => {
         ) {
           buttons.push(
             <ButtonPagination
+              colorScheme={colorScheme}
               setPageIndex={setPageIndex}
               index={index}
               pageIndex={pageIndex}
@@ -107,6 +122,7 @@ const PaginationTable = (props) => {
         for (let index = pageIndex - 2; index < pageIndex + 3; index++) {
           buttons.push(
             <ButtonPagination
+              colorScheme={colorScheme}
               setPageIndex={setPageIndex}
               index={index}
               pageIndex={pageIndex}
@@ -127,7 +143,7 @@ const PaginationTable = (props) => {
           setPageIndex(pageIndex - 1);
         }}
         isDisabled={!(pageIndex > 0)}
-        colorScheme="teal"
+        colorScheme={colorScheme}
         variant="link"
       >
         Atras
@@ -142,7 +158,7 @@ const PaginationTable = (props) => {
           setPageIndex(pageIndex + 1);
         }}
         isDisabled={!(pageIndex + 1 < parseInt(totalItemsCount / pageSize))}
-        colorScheme="teal"
+        colorScheme={colorScheme}
         variant="link"
       >
         Atras
@@ -156,22 +172,26 @@ const PaginationTable = (props) => {
     <ChakraProvider>
       <HStack w="100%" p={2}>
         <HStack w="40%">
-          <Text fontSize="sm"> Items mostrados: </Text>
-          <Select
-            w="auto"
-            size="sm"
-            variant="unstyled"
-            value={pageSize}
-            onChange={(e) => {
-              setPageSize(e.target.value);
-            }}
-          >
-            {pageSizeOptions.map((opt) => (
-              <option key={opt.id} value={opt}>
-                {opt}
-              </option>
-            ))}
-          </Select>
+          {showOptions && (
+            <>
+              <Text fontSize="sm"> {labelOptions}: </Text>
+              <Select
+                w="auto"
+                size="sm"
+                variant="unstyled"
+                value={pageSize}
+                onChange={(e) => {
+                  setPageSize(e.target.value);
+                }}
+              >
+                {pageSizeOptions.map((opt) => (
+                  <option key={opt.id} value={opt}>
+                    {opt}
+                  </option>
+                ))}
+              </Select>
+            </>
+          )}
         </HStack>
         <Box w="60%" justifyContent="right" display="flex">
           <HStack>{showButtons()}</HStack>
