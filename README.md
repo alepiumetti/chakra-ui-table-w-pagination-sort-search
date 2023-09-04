@@ -1,9 +1,6 @@
 # chakra-ui-table-w-pagination-sort-search
 Pagination tables component for Chakra-UI
 
-> [!WARNING]
-> Docs under construction
-
 - [chakra-ui-table-w-pagination-sort-search](#chakra-ui-table-w-pagination-sort-search)
 - [Getting started](#getting-started)
   - [Install](#install)
@@ -18,6 +15,8 @@ Pagination tables component for Chakra-UI
 ## Install
 
 `npm install table-pagination-chakra-ui`
+
+[npm Module](https://www.npmjs.com/package/table-pagination-chakra-ui)
 
 ### Props
 
