@@ -75,7 +75,7 @@ const PaginationTable = (props) => {
     }
 
     if (totalIndex < 5) {
-      for (let index = 0; index <= totalIndex; index++) {
+      for (let index = 0; index < totalIndex; index++) {
         buttons.push(
           <ButtonPagination
             colorScheme={colorScheme}
