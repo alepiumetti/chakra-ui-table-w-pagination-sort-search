@@ -1,6 +1,8 @@
 # chakra-ui-table-w-pagination-sort-search
 Pagination tables component for Chakra-UI
 
+![demo-dif](demo-gif.gif)
+
 - [chakra-ui-table-w-pagination-sort-search](#chakra-ui-table-w-pagination-sort-search)
 - [Getting started](#getting-started)
   - [Install](#install)
