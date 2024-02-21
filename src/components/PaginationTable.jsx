@@ -66,10 +66,10 @@ const PaginationTable = (props) => {
   const showButtons = () => {
     let buttons = [];
 
-    const totalIndex = Math.floor(totalItemsCount / pageSize);
+    const TOTAL_INDEX = Math.floor(totalItemsCount / pageSize);
 
-    if (totalIndex < 5) {
-      for (let index = 0; index < totalIndex; index++) {
+    if (TOTAL_INDEX < 5) {
+      for (let index = 0; index < TOTAL_INDEX; index++) {
         buttons.push(
           <ButtonPagination
             colorScheme={colorScheme}
@@ -83,7 +83,7 @@ const PaginationTable = (props) => {
       }
     }
 
-    if (totalIndex >= 5) {
+    if (TOTAL_INDEX >= 5) {
       if (pageIndex < 3) {
         for (let index = 0; index <= 5; index++) {
           buttons.push(
@@ -97,8 +97,8 @@ const PaginationTable = (props) => {
             </ButtonPagination>
           );
         }
-      } else if (pageIndex >= totalIndex - 2) {
-        for (let index = totalIndex - 5; index < totalIndex; index++) {
+      } else if (pageIndex >= TOTAL_INDEX - 2) {
+        for (let index = TOTAL_INDEX - 5; index < TOTAL_INDEX; index++) {
           buttons.push(
             <ButtonPagination
               colorScheme={colorScheme}
@@ -149,7 +149,7 @@ const PaginationTable = (props) => {
         onClick={() => {
           setPageIndex(pageIndex + 1);
         }}
-        isDisabled={!(pageIndex + 1 < totalIndex)}
+        isDisabled={!(pageIndex + 1 < TOTAL_INDEX)}
         colorScheme={colorScheme}
         variant="link"
       >
