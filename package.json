@@ -1,5 +1,5 @@
 {
-  "name": "table-pagination-chakra-ui",
+  "name": "@alepiumetti/table-pagination-chakra-ui",
   "repository": {
     "type": "git",
     "url": "https://github.com/alepiumetti/chakra-ui-table-w-pagination-sort-search.git"
