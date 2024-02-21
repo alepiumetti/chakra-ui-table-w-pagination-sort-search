@@ -66,13 +66,7 @@ const PaginationTable = (props) => {
   const showButtons = () => {
     let buttons = [];
 
-    let totalIndex;
-
-    if (parseInt(totalItemsCount / pageSize) < totalItemsCount / pageSize) {
-      totalIndex = parseInt(totalItemsCount / pageSize) + 1;
-    } else {
-      totalIndex = parseInt(totalItemsCount / pageSize);
-    }
+    const totalIndex = Math.floor(totalItemsCount / pageSize);
 
     if (totalIndex < 5) {
       for (let index = 0; index < totalIndex; index++) {
