@@ -40,6 +40,9 @@ Pagination tables component for Chakra-UI
 
 `labelOptions`: {String} - Etiqueta de opciones - `Default = "Items mostrados"`
 
+`showQuantity`: {Boolean} - Muestra cantidad - `Default = true`
+
+
 ### Import and use
 
 

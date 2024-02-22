@@ -26,7 +26,6 @@ jobs:
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org/
-      - run: npm adduser
       - run: npm install
       - run: npm run build
       - run: npm publish
@@ -46,6 +45,8 @@ jobs:
           registry-url: https://npm.pkg.github.com/
           scope: "@alepiumetti"
       - run: npm install
+      - name: Update package.json name
+      - run: sed -i 's/"name": "table-pagination-chakra-ui"/"name": "@alepiumetti\/table-pagination-chakra-ui"/g' package.json
       - run: npm run build
       - run: npm publish
         env:

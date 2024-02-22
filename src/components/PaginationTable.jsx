@@ -47,6 +47,7 @@ const ButtonPagination = (props) => {
  * @param {String} colorScheme - Color de estilo de la paginación - Default = "teal"
  * @param {Boolean} showOptions - Muestra las opciones - Default = true
  * @param {String} labelOptions - Etiqueta de opciones - Default = "Items mostrados"
+ * @param {Boolean} showQuantity - Muestra cantidad - Default = false
  * @return {Component} Componente de paginación de tablas.
  */
 
@@ -61,6 +62,7 @@ const PaginationTable = (props) => {
     showOptions = true,
     labelOptions = "Items mostrados",
     colorScheme = "teal",
+    showQuantity = false,
   } = props;
 
   const showButtons = () => {
@@ -182,6 +184,10 @@ const PaginationTable = (props) => {
                   </option>
                 ))}
               </Select>
+
+              {showQuantity && (
+                <Text fontSize="sm">Total: {totalItemsCount}</Text>
+              )}
             </>
           )}
         </HStack>
