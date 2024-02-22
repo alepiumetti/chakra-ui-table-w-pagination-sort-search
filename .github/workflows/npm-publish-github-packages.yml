@@ -46,7 +46,7 @@ jobs:
           scope: "@alepiumetti"
       - run: npm install
       - name: Update package.json name
-        run: sed -i 's/"name": "table-pagination-chakra-ui"/"name": "@alepiumetti\/table-pagination-chakra-ui"/g' package.json
+        run: sed -i 's/name: table-pagination-chakra-ui/name: "@alepiumetti\/table-pagination-chakra-ui"/g' package.json
       - run: npm run build
       - run: npm publish
         env:
