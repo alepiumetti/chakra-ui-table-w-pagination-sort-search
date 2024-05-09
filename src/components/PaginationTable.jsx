@@ -67,10 +67,9 @@ const PaginationTable = (props) => {
 
   const showButtons = () => {
     let buttons = [];
-
-    const TOTAL_INDEX = Math.floor(totalItemsCount / pageSize);
-
-    if (TOTAL_INDEX < 5) {
+    const TOTAL_INDEX = Math.ceil(totalItemsCount / pageSize);
+   
+    if (TOTAL_INDEX <= 5) {
       for (let index = 0; index < TOTAL_INDEX; index++) {
         buttons.push(
           <ButtonPagination
@@ -83,51 +82,28 @@ const PaginationTable = (props) => {
           </ButtonPagination>
         );
       }
-    }
-
-    if (TOTAL_INDEX >= 5) {
-      if (pageIndex < 3) {
-        for (let index = 0; index <= 5; index++) {
-          buttons.push(
-            <ButtonPagination
-              colorScheme={colorScheme}
-              setPageIndex={setPageIndex}
-              index={index}
-              pageIndex={pageIndex}
-            >
-              {index + 1}
-            </ButtonPagination>
-          );
-        }
-      } else if (pageIndex >= TOTAL_INDEX - 2) {
-        for (let index = TOTAL_INDEX - 5; index < TOTAL_INDEX; index++) {
-          buttons.push(
-            <ButtonPagination
-              colorScheme={colorScheme}
-              setPageIndex={setPageIndex}
-              index={index}
-              pageIndex={pageIndex}
-            >
-              {index + 1}
-            </ButtonPagination>
-          );
-        }
-      } else {
-        for (let index = pageIndex - 2; index < pageIndex + 3; index++) {
-          buttons.push(
-            <ButtonPagination
-              colorScheme={colorScheme}
-              setPageIndex={setPageIndex}
-              index={index}
-              pageIndex={pageIndex}
-            >
-              {index + 1}
-            </ButtonPagination>
-          );
-        }
+    } else {
+      let start = Math.max(0, pageIndex - 2);
+      let end = Math.min(TOTAL_INDEX - 1, start + 4);
+  
+      if (end === TOTAL_INDEX - 1) {
+        start = Math.max(0, end - 4);
+      }
+  
+      for (let index = start; index <= end; index++) {
+        buttons.push(
+          <ButtonPagination
+            colorScheme={colorScheme}
+            setPageIndex={setPageIndex}
+            index={index}
+            pageIndex={pageIndex}
+          >
+            {index + 1}
+          </ButtonPagination>
+        );
       }
     }
-
+  
     // Si en el indice que está es mayor a cero muestra el boton para volver atrás
     buttons.unshift(
       <IconButton
@@ -143,7 +119,7 @@ const PaginationTable = (props) => {
         Atras
       </IconButton>
     );
-
+  
     buttons.push(
       <IconButton
         icon={<ArrowRightIcon />}
@@ -158,10 +134,11 @@ const PaginationTable = (props) => {
         Atras
       </IconButton>
     );
-
+  
     return buttons;
   };
-
+  
+  
   return (
     <ChakraProvider>
       <HStack w="100%" p={2}>
@@ -200,3 +177,4 @@ const PaginationTable = (props) => {
 };
 
 export default PaginationTable;
+
