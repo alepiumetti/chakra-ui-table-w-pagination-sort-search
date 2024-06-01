@@ -2,7 +2,6 @@ import { ArrowLeftIcon, ArrowRightIcon } from "@chakra-ui/icons";
 import {
   Box,
   Button,
-  ChakraProvider,
   HStack,
   IconButton,
   Select,
@@ -68,7 +67,7 @@ const PaginationTable = (props) => {
   const showButtons = () => {
     let buttons = [];
     const TOTAL_INDEX = Math.ceil(totalItemsCount / pageSize);
-   
+
     if (TOTAL_INDEX <= 5) {
       for (let index = 0; index < TOTAL_INDEX; index++) {
         buttons.push(
@@ -85,11 +84,11 @@ const PaginationTable = (props) => {
     } else {
       let start = Math.max(0, pageIndex - 2);
       let end = Math.min(TOTAL_INDEX - 1, start + 4);
-  
+
       if (end === TOTAL_INDEX - 1) {
         start = Math.max(0, end - 4);
       }
-  
+
       for (let index = start; index <= end; index++) {
         buttons.push(
           <ButtonPagination
@@ -103,7 +102,7 @@ const PaginationTable = (props) => {
         );
       }
     }
-  
+
     // Si en el indice que está es mayor a cero muestra el boton para volver atrás
     buttons.unshift(
       <IconButton
@@ -119,7 +118,7 @@ const PaginationTable = (props) => {
         Atras
       </IconButton>
     );
-  
+
     buttons.push(
       <IconButton
         icon={<ArrowRightIcon />}
@@ -134,13 +133,12 @@ const PaginationTable = (props) => {
         Atras
       </IconButton>
     );
-  
+
     return buttons;
   };
-  
-  
+
   return (
-    <ChakraProvider>
+    <>
       <HStack w="100%" p={2}>
         <HStack w="40%">
           {showOptions && (
@@ -172,9 +170,8 @@ const PaginationTable = (props) => {
           <HStack>{showButtons()}</HStack>
         </Box>
       </HStack>
-    </ChakraProvider>
+    </>
   );
 };
 
 export default PaginationTable;
-
