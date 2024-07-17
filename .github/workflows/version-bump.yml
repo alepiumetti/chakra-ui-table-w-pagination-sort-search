@@ -2,7 +2,7 @@ name: Actualización de version y deploy a producción
 
 on:
   push:
-    branches: [master]
+    branches: [main]
 jobs:
   deploy:
     runs-on: ubuntu-latest
