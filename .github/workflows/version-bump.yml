@@ -1,0 +1,27 @@
+name: Actualización de version y deploy a producción
+
+on:
+  push:
+    branches: [master]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: "Checkout source code"
+        uses: "actions/checkout@v2"
+        with:
+          ref: ${{ github.ref }}
+      - name: "Revisa versión anterior"
+        run: cat ./package.json
+      - name: "Actualización de versión automática"
+        uses: "phips28/gh-action-bump-version@master"
+        env:
+          GITHUB_TOKEN: ${{ secrets.SECRET_GITHUB_TOKEN }}
+        with:
+          minor-wording: "[ADD],[add]"
+          major-wording: "[FT],[ft]"
+          patch-wording: "[FIX],[fix],[RL],[rl],[RELEASE]"
+      - name: "Revisa versión actual"
+        run: cat ./package.json
