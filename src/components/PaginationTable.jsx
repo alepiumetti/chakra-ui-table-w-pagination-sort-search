@@ -59,7 +59,7 @@ const PaginationTable = (props) => {
     totalItemsCount,
     pageSizeOptions = [10, 25, 50],
     showOptions = true,
-    labelOptions = "Items mostrados",
+    labelOptions = "Items mostrados:",
     colorScheme = "teal",
     showQuantity = false,
   } = props;
@@ -143,7 +143,7 @@ const PaginationTable = (props) => {
         <HStack w="40%">
           {showOptions && (
             <>
-              <Text fontSize="sm"> {labelOptions}: </Text>
+              <Text fontSize="sm"> {labelOptions} </Text>
               <Select
                 w="auto"
                 size="sm"
