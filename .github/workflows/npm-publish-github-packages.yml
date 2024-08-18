@@ -20,7 +20,7 @@ jobs:
           registry-url: https://registry.npmjs.org/
           cache: 'npm'
           cache-dependency-path: package-lock.json
-      - run: npm ci
+      - run: npm ci --force
       - run: npm run build
   publish-npm:
     if: ${{ github.event_name == 'release' }}
@@ -34,7 +34,7 @@ jobs:
           registry-url: https://registry.npmjs.org/
           cache: 'npm'
           cache-dependency-path: package-lock.json
-      - run: npm ci
+      - run: npm ci --force
       - run: npm run build
       - run: npm publish
         env:
@@ -55,7 +55,7 @@ jobs:
           cache: 'npm'
           cache-dependency-path: package-lock.json
           scope: "@alepiumetti"
-      - run: npm ci
+      - run: npm ci --force
       - name: Update package.json name
         run: sed -i '2,2 s/table-pagination-chakra-ui/@alepiumetti\/table-pagination-chakra-ui/g' package.json
       - run: npm run build
