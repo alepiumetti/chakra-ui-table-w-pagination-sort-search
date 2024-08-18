@@ -16,8 +16,8 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-      - run: npm install
           node-version: 20
+      - run: npm ci
       - run: npm run build
   publish-npm:
     if: ${{ github.event_name == 'release' }}
@@ -29,7 +29,7 @@ jobs:
         with:
           node-version: 20
           registry-url: https://registry.npmjs.org/
-      - run: npm install
+      - run: npm ci
       - run: npm run build
       - run: npm publish
         env:
@@ -48,7 +48,7 @@ jobs:
           node-version: 20
           registry-url: https://npm.pkg.github.com/
           scope: "@alepiumetti"
-      - run: npm install
+      - run: npm ci
       - name: Update package.json name
         run: sed -i '2,2 s/table-pagination-chakra-ui/@alepiumetti\/table-pagination-chakra-ui/g' package.json
       - run: npm run build
