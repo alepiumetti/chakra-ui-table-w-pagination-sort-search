@@ -17,6 +17,9 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 20
+          registry-url: https://registry.npmjs.org/
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
       - run: npm ci
       - run: npm run build
   publish-npm:
@@ -29,6 +32,8 @@ jobs:
         with:
           node-version: 20
           registry-url: https://registry.npmjs.org/
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
       - run: npm ci
       - run: npm run build
       - run: npm publish
@@ -47,6 +52,8 @@ jobs:
         with:
           node-version: 20
           registry-url: https://npm.pkg.github.com/
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
           scope: "@alepiumetti"
       - run: npm ci
       - name: Update package.json name
