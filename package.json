@@ -10,7 +10,7 @@
     "name": "Alejandro Piumetti",
     "email": "alejandro@piumetti.com.ar"
   },
-  "version": "1.2.6",
+  "version": "1.2.7",
   "type": "module",
   "main": "./dist/index.umd.js",
   "module": "./dist/index.es.js",
