@@ -1,11 +1,12 @@
 # chakra-ui-table-w-pagination-sort-search | Spanish Version
 Componente de tablas con paginación para Chakra-UI V2
 
-[README en inglés](readme_en.md)
+### [English README](readme_en.md)
 
 ![demo-dif](demo-gif.gif)
 
 - [chakra-ui-table-w-pagination-sort-search | Spanish Version](#chakra-ui-table-w-pagination-sort-search--spanish-version)
+    - [English README](#english-readme)
 - [Comenzando](#comenzando)
   - [Instalación](#instalación)
     - [Props](#props)
