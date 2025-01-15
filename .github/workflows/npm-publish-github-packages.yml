@@ -6,7 +6,7 @@ name: Node.js Package
 on:
   pull_request:
   release:
-    types: [created]
+    types: [published]
 
 jobs:
   build:
@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: 20
           registry-url: https://registry.npmjs.org/
-          cache: 'npm'
+          cache: "npm"
           cache-dependency-path: package-lock.json
       - run: npm ci --force
       - run: npm run build
@@ -32,7 +32,7 @@ jobs:
         with:
           node-version: 20
           registry-url: https://registry.npmjs.org/
-          cache: 'npm'
+          cache: "npm"
           cache-dependency-path: package-lock.json
       - run: npm ci --force
       - run: npm run build
@@ -52,7 +52,7 @@ jobs:
         with:
           node-version: 20
           registry-url: https://npm.pkg.github.com/
-          cache: 'npm'
+          cache: "npm"
           cache-dependency-path: package-lock.json
           scope: "@alepiumetti"
       - run: npm ci --force
