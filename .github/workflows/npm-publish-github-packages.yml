@@ -40,7 +40,6 @@ jobs:
           NODE_AUTH_TOKEN: ${{secrets.PUBLISH_NPM_TOKEN}}
   publish-gpr:
     if: ${{ github.event_name == 'release' }}
-    needs: build
     runs-on: ubuntu-latest
     permissions:
       contents: read
